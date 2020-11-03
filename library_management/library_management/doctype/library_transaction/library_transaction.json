@@ -5,13 +5,14 @@
  "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
+  "type",
+  "section_break_2",
   "article",
   "article_name",
   "column_break_3",
   "library_member",
   "member_full_name",
   "column_break_6",
-  "type",
   "date",
   "amended_from"
  ],
@@ -82,10 +83,14 @@
   {
    "fieldname": "column_break_6",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
   }
  ],
  "is_submittable": 1,
- "modified": "2020-11-03 14:42:41.677286",
+ "modified": "2020-11-03 15:39:52.719069",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Transaction",
@@ -112,7 +117,6 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC"
 }

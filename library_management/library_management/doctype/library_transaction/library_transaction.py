@@ -60,7 +60,7 @@ class LibraryTransaction(Document):
 			{"library_member": self.library_member,
 			 "type": "Issue",
 			 "docstatus": 1,
-			 "date": ("<", to_date),
+			 "date": ("<=", to_date),
 			 "date": (">", from_date)},
 		)
 		if count >= max_articles:
@@ -73,7 +73,7 @@ class LibraryTransaction(Document):
 			{
 				"library_member": self.library_member,
 				"docstatus": 1,
-				"from_date": ("<", self.date),
+				"from_date": ("<=", self.date),
 				"to_date": (">", self.date),
 			},
 		)
