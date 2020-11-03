@@ -2,7 +2,7 @@
  "autoname": "AR.#######",
  "creation": "2014-05-06 14:13:01.203763",
  "doctype": "DocType",
- "document_type": "Setup",
+ "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
   "section_break_1",
@@ -14,7 +14,6 @@
   "isbn",
   "column_break_8",
   "image",
-  "image_view",
   "section_break_11",
   "description"
  ],
@@ -37,11 +36,12 @@
    "reqd": 1
   },
   {
+   "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Active\nInactive\nDiscontinued",
+   "options": "Available\nIssued",
    "reqd": 1
   },
   {
@@ -68,7 +68,7 @@
   },
   {
    "fieldname": "image",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Image"
   },
   {
@@ -81,15 +81,10 @@
    "in_list_view": 1,
    "label": "Description",
    "reqd": 1
-  },
-  {
-   "fieldname": "image_view",
-   "fieldtype": "Image",
-   "label": "Image View",
-   "options": "image"
   }
  ],
- "modified": "2020-11-02 16:20:41.422482",
+ "image_field": "image",
+ "modified": "2020-11-03 12:32:59.759977",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",

@@ -1,63 +1,82 @@
 {
- "autoname": "MEM.#####", 
- "creation": "2014-05-06 14:20:39.589489", 
- "docstatus": 0, 
- "doctype": "DocType", 
- "document_type": "Master", 
+ "autoname": "MEM.######",
+ "creation": "2014-05-06 14:20:39.589489",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "first_name",
+  "last_name",
+  "email_id",
+  "phone",
+  "address",
+  "full_name"
+ ],
  "fields": [
   {
-   "fieldname": "first_name", 
-   "fieldtype": "Data", 
-   "in_list_view": 1, 
-   "label": "First Name", 
-   "permlevel": 0, 
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
    "reqd": 1
-  }, 
+  },
   {
-   "fieldname": "last_name", 
-   "fieldtype": "Data", 
-   "in_list_view": 1, 
-   "label": "Last Name", 
-   "permlevel": 0
-  }, 
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name"
+  },
   {
-   "fieldname": "email_id", 
-   "fieldtype": "Data", 
-   "in_list_view": 1, 
-   "label": "Email Id", 
-   "permlevel": 0, 
+   "allow_in_quick_entry": 1,
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email Address",
+   "options": "Email",
    "reqd": 1
-  }, 
+  },
   {
-   "fieldname": "phone", 
-   "fieldtype": "Data", 
-   "in_list_view": 1, 
-   "label": "Phone", 
-   "permlevel": 0
-  }, 
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone",
+   "options": "Phone"
+  },
   {
-   "fieldname": "address", 
-   "fieldtype": "Text", 
-   "in_list_view": 1, 
-   "label": "Address", 
-   "permlevel": 0
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "in_list_view": 1,
+   "label": "Address"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Full name",
+   "read_only": 1,
+   "unique": 1
   }
- ], 
- "modified": "2014-05-06 14:23:47.229211", 
- "modified_by": "Administrator", 
- "module": "Library Management", 
- "name": "Library Member", 
- "name_case": "", 
- "owner": "Administrator", 
+ ],
+ "modified": "2020-11-03 14:12:34.912594",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library Member",
+ "owner": "Administrator",
  "permissions": [
   {
-   "create": 1, 
-   "delete": 1, 
-   "permlevel": 0, 
-   "read": 1, 
-   "role": "Librarian", 
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Librarian",
    "write": 1
   }
- ], 
- "search_fields": "first_name,last_name"
+ ],
+ "quick_entry": 1,
+ "search_fields": "first_name,last_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "full_name",
+ "track_changes": 1
 }

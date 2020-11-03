@@ -37,9 +37,9 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "Library Management Settings",
-					"label": _("Library Management Settings"),
-					"description": _("Manage Members Transaction"),
+					"name": "Library Settings",
+					"label": _("Library Settings"),
+					"description": _("Manage Library Settings"),
 					"onboard": 0,
 				},
 			]
