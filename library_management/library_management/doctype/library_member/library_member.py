@@ -17,14 +17,12 @@ class LibraryMember(Document):
 			"Library Membership",
 			{
 				"library_member": self.name,
-				# check for submitted documents
 				"docstatus": 1,
 				# check if the membership's end date is later than this membership's start date
 				"to_date": (">", frappe.utils.today()),
-				#"to_date": ("OR", "IS NULL"),
 			},
 		)
-		#frappe.throw(exists)
+
 		if exists:
 			self.is_valid_membership_flag = 1
 		else:

@@ -1,0 +1,67 @@
+{
+ "creation": "2020-11-03 13:46:28.963408",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "loan_period",
+  "max_period",
+  "max_number_per_period"
+ ],
+ "fields": [
+  {
+   "default": "30",
+   "fieldname": "loan_period",
+   "fieldtype": "Int",
+   "label": "Loan Period"
+  },
+  {
+   "default": "Month",
+   "fetch_from": "10",
+   "fieldname": "max_period",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Period",
+   "options": "Week\nMonth\nYear",
+   "reqd": 1
+  },
+  {
+   "default": "10",
+   "fieldname": "max_number_per_period",
+   "fieldtype": "Int",
+   "label": "Maximum Number of Issued Articles per Period"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2020-11-03 14:20:10.828637",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Librarian",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
