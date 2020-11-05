@@ -1,27 +1,25 @@
 {
+ "allow_guest_to_view": 1,
  "autoname": "AR.#######",
  "creation": "2014-05-06 14:13:01.203763",
  "doctype": "DocType",
  "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_1",
   "article_name",
   "author",
-  "status",
-  "publisher",
   "language",
+  "column_break_4",
+  "image",
+  "publisher",
   "isbn",
   "column_break_8",
-  "image",
-  "section_break_11",
-  "description"
+  "description",
+  "section_break_10",
+  "status",
+  "route"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_1",
-   "fieldtype": "Section Break"
-  },
   {
    "fieldname": "article_name",
    "fieldtype": "Data",
@@ -32,6 +30,8 @@
   {
    "fieldname": "author",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Author",
    "reqd": 1
   },
@@ -41,7 +41,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Status",
-   "options": "Available\nIssued",
+   "options": "Available\nOut",
    "reqd": 1
   },
   {
@@ -72,19 +72,30 @@
    "label": "Image"
   },
   {
-   "fieldname": "section_break_11",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "description",
    "fieldtype": "Text Editor",
    "in_list_view": 1,
    "label": "Description",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Route"
   }
  ],
+ "has_web_view": 1,
  "image_field": "image",
- "modified": "2020-11-03 12:32:59.759977",
+ "modified": "2020-11-05 14:32:36.153992",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
@@ -98,6 +109,7 @@
    "write": 1
   }
  ],
+ "route": "route",
  "search_fields": "article_name,author",
  "sort_field": "modified",
  "sort_order": "DESC",

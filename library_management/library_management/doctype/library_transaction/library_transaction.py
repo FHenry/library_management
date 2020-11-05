@@ -11,12 +11,12 @@ class LibraryTransaction(Document):
 	#	self.title = f'{self.member_full_name} {self.article_name} {self.transaction_date}'
 
 	def before_submit(self):
-		if self.type == "Issue":
+		if self.type == "Borrow":
 			self.validate_issue()
 			self.validate_maximum_limit()
 			# set the article status to be Issued
 			article = frappe.get_doc("Article", self.article)
-			article.status = "Issued"
+			article.status = "Out"
 			article.save()
 
 		elif self.type == "Return":
@@ -30,8 +30,8 @@ class LibraryTransaction(Document):
 		self.validate_membership()
 		article = frappe.get_doc("Article", self.article)
 		# article cannot be issued if it is already issued
-		if article.status == "Issued":
-			frappe.throw("Article is already issued by another member")
+		if article.status == "Out":
+			frappe.throw("Article is already borrowed by another member")
 
 	def validate_return(self):
 		article = frappe.get_doc("Article", self.article)

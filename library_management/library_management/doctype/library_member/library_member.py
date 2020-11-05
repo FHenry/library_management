@@ -12,7 +12,7 @@ class LibraryMember(Document):
 		if self.email_id:
 			validate_email_address(self.email_id, True)
 
-	def is_valid_membership(self):
+	def is_valid_membership_populate(self):
 		exists = frappe.db.exists(
 			"Library Membership",
 			{
@@ -22,13 +22,30 @@ class LibraryMember(Document):
 				"to_date": (">", frappe.utils.today()),
 			},
 		)
-
 		if exists:
 			self.is_valid_membership_flag = 1
 		else:
 			self.is_valid_membership_flag = 0
 
+	def is_valid_membership(self):
+		self.is_valid_membership_populate()
 		return self
+
+@frappe.whitelist()
+def get_valid_members(doctype, txt, searchfield, start, page_len, filters):
+	valid_members=[]
+	#Return a list of Tuple(name,title field) for (value, search data) of only members with valid subscription
+	meta = frappe.get_meta(doctype)
+	for member_record in frappe.db.get_all(doctype=doctype, as_list=True):
+		member = frappe.get_doc(doctype, member_record[0])
+		member.is_valid_membership_populate()
+		if member.is_valid_membership_flag == 1:
+			if meta.title_field:
+				description = getattr(member, meta.title_field)
+			else:
+				description = ''
+			valid_members.append((member.name, description))
+	return valid_members
 
 
 
