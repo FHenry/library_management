@@ -97,7 +97,7 @@ def get_count_and_timeline_operation(doctype, name):
 		"Library Transaction",
 		filters={
 			"library_member": name,
-			"docstatus": 1,
+			"docstatus": 0,
 		}),
 		"count": frappe.db.count(
 		"Library Transaction",

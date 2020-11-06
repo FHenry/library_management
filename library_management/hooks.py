@@ -1,3 +1,6 @@
+from __future__ import unicode_literals
+from frappe import _
+
 app_name = "library_management"
 app_title = "Library Management"
 app_publisher = "Frappe"
@@ -6,7 +9,7 @@ app_icon = "octicon octicon-book"
 app_color = "#589494"
 app_email = "info@frappe.io"
 app_url = "https://frappe.io/apps/library_management"
-app_version = "0.0.1"
+app_version = "0.0.2"
 
 role_home_page = {
 	"Library Member": "article"
@@ -27,13 +30,13 @@ role_home_page = {
 # ------------
 
 # before_install = "library_management.install.before_install"
-# after_install = "library_management.install.after_install"
+after_install = "library_management.install.after_install"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "library_management.notifications.get_notification_config"
+notification_config = "library_management.startup.notifications.get_notification_config"
 
 # Permissions
 # -----------
