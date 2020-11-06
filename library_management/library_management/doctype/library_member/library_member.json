@@ -9,6 +9,7 @@
   "last_name",
   "email_id",
   "phone",
+  "column_break_5",
   "address",
   "full_name",
   "is_valid_membership_flag"
@@ -65,9 +66,13 @@
    "hidden": 1,
    "label": "is_valid_membership_flas",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
   }
  ],
- "modified": "2020-11-05 11:49:51.949097",
+ "modified": "2020-11-05 14:43:31.424163",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Member",

@@ -47,6 +47,9 @@
   {
    "fieldname": "publisher",
    "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Publisher"
   },
   {
@@ -95,7 +98,7 @@
  ],
  "has_web_view": 1,
  "image_field": "image",
- "modified": "2020-11-05 14:32:36.153992",
+ "modified": "2020-11-06 18:26:04.301656",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",

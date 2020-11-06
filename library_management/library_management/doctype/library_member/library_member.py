@@ -47,5 +47,66 @@ def get_valid_members(doctype, txt, searchfield, start, page_len, filters):
 			valid_members.append((member.name, description))
 	return valid_members
 
+@frappe.whitelist()
+def get_count_and_timeline_operation(doctype, name):
+	timeline_data={}
+	# time line
+	for member_record in frappe.db.get_all(
+			doctype="Library Membership",
+			fields=['from_date'],
+			filters={
+				"library_member": name,
+			},
+	):
+		timeline_data.update({frappe.utils.get_timestamp(member_record.from_date): 1})
+
+	for member_record in frappe.db.get_all(
+			doctype="Library Transaction",
+			fields=['date'],
+			filters={
+				"library_member": name,
+				"type": ('in', ("Borrow","Issue")),
+			 	"docstatus": 1,
+			},
+	):
+		timeline_data.update({frappe.utils.get_timestamp(member_record.date): 1})
+
+	out={
+		"timeline_data": timeline_data
+	}
+
+	count = []
+	# count
+	count.append({
+		"name":"Library Membership",
+		"open_count": frappe.db.count(
+		"Library Membership",
+		filters={
+			"library_member": name,
+			"docstatus": 1,
+		}),
+		"count": frappe.db.count(
+		"Library Membership",
+		filters={
+			"library_member": name,
+		})
+	})
+	count.append({
+		"name":"Library Transaction",
+		"open_count":frappe.db.count(
+		"Library Transaction",
+		filters={
+			"library_member": name,
+			"docstatus": 1,
+		}),
+		"count": frappe.db.count(
+		"Library Transaction",
+		filters={
+			"library_member": name,
+		})
+	})
+	out["count"]=count
+
+	return out
 
 

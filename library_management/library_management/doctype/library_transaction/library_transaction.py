@@ -58,7 +58,7 @@ class LibraryTransaction(Document):
 		count = frappe.db.count(
 			"Library Transaction",
 			{"library_member": self.library_member,
-			 "type": "Issue",
+			 "type": "Borrow",
 			 "docstatus": 1,
 			 "date": ("<=", to_date),
 			 "date": (">", from_date)},
