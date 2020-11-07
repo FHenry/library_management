@@ -25,7 +25,7 @@ def get_data():
 					"type": "doctype",
 					"name": "Library Membership",
 					"label": _("Library Membership"),
-					"description": _("Manage Membersship"),
+					"description": _("Manage Membership"),
 					"onboard": 1,
 				},
 				{
