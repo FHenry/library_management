@@ -12,6 +12,6 @@ def get_data():
 				"reverse": 1,
 				"icon": "octicon octicon-book",
 				"type": "module",
-				"description": "Todos, notes, calendar and newsletter."
+				"description": "Library management, sample tutorial module"
 			},
 		]
