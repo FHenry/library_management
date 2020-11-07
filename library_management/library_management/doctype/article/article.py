@@ -1,5 +1,5 @@
 # Copyright (c) 2013, Frappe
-# For license information, please seeLICENSE
+# For license information, please see LICENSE
 
 from __future__ import unicode_literals
 import frappe
