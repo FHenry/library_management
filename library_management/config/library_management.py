@@ -42,6 +42,20 @@ def get_data():
 					"description": _("Manage Library Settings"),
 					"onboard": 0,
 				},
+				{
+					"type": "doctype",
+					"name": "Article Type",
+					"label": _("Article Type"),
+					"description": _("Manage Books Type"),
+					"onboard": 0,
+				},
+				{
+					"type": "doctype",
+					"name": "Article Type Icon",
+					"label": _("Article Type Icon"),
+					"description": _("Manage Books Type Icon"),
+					"onboard": 0,
+				},
 			]
         },
     ]

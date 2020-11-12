@@ -57,11 +57,13 @@ class LibraryTransaction(Document):
 
 		count = frappe.db.count(
 			"Library Transaction",
-			{"library_member": self.library_member,
-			 "type": "Borrow",
-			 "docstatus": 1,
-			 "date": ("<=", to_date),
-			 "date": (">", from_date)},
+			{
+				"library_member": self.library_member,
+				"type": "Borrow",
+			 	"docstatus": 1,
+			 	"date": ("<=", to_date),
+			 	"date": (">", from_date)
+			},
 		)
 		if count >= max_articles:
 			frappe.throw("Maximum limit(",count,")reached for issuing articles for period ", period_max)

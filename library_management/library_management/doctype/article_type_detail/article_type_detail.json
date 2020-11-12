@@ -1,0 +1,30 @@
+{
+ "creation": "2020-11-12 10:15:08.391182",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "article_type"
+ ],
+ "fields": [
+  {
+   "fieldname": "article_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Article Type",
+   "options": "Article Type",
+   "reqd": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2020-11-12 10:59:13.664396",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Article Type Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,5 +1,6 @@
 {
  "allow_guest_to_view": 1,
+ "allow_rename": 1,
  "autoname": "AR.#######",
  "creation": "2014-05-06 14:13:01.203763",
  "doctype": "DocType",
@@ -9,6 +10,7 @@
   "article_name",
   "author",
   "language",
+  "types_of_book",
   "column_break_4",
   "image",
   "publisher",
@@ -94,11 +96,19 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Route"
+  },
+  {
+   "fieldname": "types_of_book",
+   "fieldtype": "Table MultiSelect",
+   "in_filter": 1,
+   "in_standard_filter": 1,
+   "label": "Type of book",
+   "options": "Article Type Detail"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
- "modified": "2020-11-06 18:26:04.301656",
+ "modified": "2020-11-12 11:01:23.524162",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
@@ -109,6 +119,18 @@
    "delete": 1,
    "read": 1,
    "role": "Librarian",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
    "write": 1
   }
  ],

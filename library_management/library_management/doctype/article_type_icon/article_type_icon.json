@@ -1,0 +1,60 @@
+{
+ "allow_rename": 1,
+ "autoname": "field:css_class",
+ "creation": "2020-11-11 21:13:22.456231",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "css_class",
+  "icon_picto",
+  "icon_picto_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "css_class",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "CSS Class",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "icon_picto",
+   "fieldtype": "HTML Editor",
+   "label": "Icon",
+   "read_only": 1
+  },
+  {
+   "fieldname": "icon_picto_name",
+   "fieldtype": "HTML Editor",
+   "label": "Icon Name",
+   "read_only": 1
+  }
+ ],
+ "icon": "css_class",
+ "modified": "2020-11-12 09:52:30.388518",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Article Type Icon",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "css_class",
+ "sort_field": "css_class",
+ "sort_order": "ASC",
+ "title_field": "icon_picto_name"
+}
