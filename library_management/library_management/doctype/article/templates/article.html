@@ -11,8 +11,8 @@
         <div>
             {%- if status == 'Available' -%}
             <span class="badge badge-success">Available</span>
-            {%- elif status == 'Out' -%}
-            <span class="badge badge-primary">Issued</span>
+            {%- elif status == 'Out' or status == 'Issued' -%}
+            <span class="badge badge-primary">Out</span>
             {%- endif -%}
         </div>
         <div class="mt-4">
