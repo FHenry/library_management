@@ -30,7 +30,7 @@ role_home_page = {
 # ------------
 
 # before_install = "library_management.install.before_install"
-after_install = "library_management.install.after_install"
+after_install = "library_management.setup.install.after_install"
 
 # Desk Notifications
 # ------------------

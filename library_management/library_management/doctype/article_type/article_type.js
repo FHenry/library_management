@@ -18,16 +18,24 @@ frappe.ui.form.on('Article Type', {
 // return an array with all "octicon" CSS class available
 function GetAppliedCssRules() {
     let appliedOcticon = [];
+    let rules = [] ;
     for (let x = 0; x < document.styleSheets.length; x++) {
-        let rules = document.styleSheets[x].cssRules;
-        for (let i = 0; i < rules.length; i++) {
-            let txt = rules[i].selectorText;
-            if (typeof txt !== 'undefined' && txt.indexOf('octicon-') > -1 && txt.indexOf('::before') > -1) {
-                let style_detail = txt.split("-");
-                if (style_detail.length > 0) {
-                    let icon_name = style_detail[1].split('::before');
-                    if (icon_name.length > 0 && !appliedOcticon.includes(icon_name[0])) {
-                        appliedOcticon.push(icon_name[0]);
+        try {
+            rules = document.styleSheets[x].cssRules;
+        } catch(e) {
+            if (e instanceof DOMException) {
+                console.log (document.styleSheets[x]);
+            }
+        } finally {
+            for (let i = 0; i < rules.length; i++) {
+                let txt = rules[i].selectorText;
+                if (typeof txt !== 'undefined' && txt.indexOf('octicon-') > -1 && txt.indexOf('::before') > -1) {
+                    let style_detail = txt.split("-");
+                    if (style_detail.length > 0) {
+                        let icon_name = style_detail[1].split('::before');
+                        if (icon_name.length > 0 && !appliedOcticon.includes(icon_name[0])) {
+                            appliedOcticon.push(icon_name[0]);
+                        }
                     }
                 }
             }
