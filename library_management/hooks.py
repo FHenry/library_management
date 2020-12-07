@@ -23,7 +23,14 @@ role_home_page = {
 # app_include_js = "/assets/library_management/js/library_management.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/library_management/css/library_management.css"
+# website
+web_include_js = [
+	"/assets/js/desk.min.js",
+]
+web_include_css = [
+	"/assets/css/desk.min.css",
+]
+#web_include_js = "/assets/css/octicons.js"
 # web_include_js = "/assets/library_management/js/library_management.js"
 
 # Installation

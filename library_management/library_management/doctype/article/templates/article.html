@@ -18,6 +18,17 @@
         <div class="mt-4">
             <div>Publisher: <strong>{{ publisher }}</strong></div>
             <div>ISBN: <strong>{{ isbn }}</strong></div>
+            {% if types_of_book %}
+            <div>Type of Books:
+                <ul>
+                {% for type in types_of_book %}
+                    {% set picto = frappe.db.get_value('Article Type', type.article_type, ['picto_display']) %}
+                    <li>{{ picto }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            {% endif %}
         </div>
         <p>{{ description }}</p>
     </div>

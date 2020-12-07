@@ -36,7 +36,8 @@
    "read_only": 1
   }
  ],
- "modified": "2020-11-12 10:21:40.571949",
+ "icon": "picto",
+ "modified": "2020-12-07 16:43:13.864878",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article Type",
